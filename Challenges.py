@@ -43,8 +43,8 @@ def longestWord(sentence):
 # longestWord("I am a monkey from the jungles of Africa")
 
 def letterChanges(strng):
+    print "Challnege Four\nShift letters forward and capitalize vowels in following string:\n"+strng+""
     alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-    newAlphabet = ['z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y']
     vowels = ["a","e","i","o","u"]
     newStrng = ""
     for i in strng:
@@ -59,8 +59,8 @@ def letterChanges(strng):
         newStrng += alphabet[i]
     for i in range(0, len(newStrng)):
         if newStrng[i] in vowels:
-            newStrng[i].replace(newStrng[i],newStrng[i].upper())
+            newStrng = newStrng.replace(newStrng[i],newStrng[i].upper())
     print(newStrng)
 
+# letterChanges("hello ziggy marley you are such cool guy")
 
-letterChanges("hello ziggy marley you cool guy")
