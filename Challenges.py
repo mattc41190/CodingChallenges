@@ -68,5 +68,33 @@ def numberAdder(num):
         total += i
     print total
 
-numberAdder(10)
+# numberAdder(10)
 
+
+def firstLetterCapitalizer(strng):
+    print "Challnege Five\nCapitalize first letter in following string:\n "+strng+""
+    newString = ""
+    for i in range(len(strng)):
+        if i == 0:
+            newString += strng[i].upper()
+            continue
+        elif strng[i-1] == " ":
+            newString += strng[i].upper()
+            continue
+        newString += strng[i]
+    print(newString)
+
+# firstLetterCapitalizer("a lowercase sentence is bad news bears")
+
+def simpleSymbols(strng):
+    preAndPostCharacters = ["+","="]
+    for i in range(len(strng)):
+        if strng[i] in preAndPostCharacters:
+            continue
+        elif strng[i + 1] not in preAndPostCharacters or strng[i - 1] not in preAndPostCharacters:
+            assert False, "Function expects a valid sentence you entered: " + strng
+        else:
+            assert True, "Yay!!"
+
+simpleSymbols("+++=f+f+=r+b+")
+simpleSymbols("+++=ff+f+=r+b+")
