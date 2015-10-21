@@ -1,9 +1,6 @@
 __author__ = 'mattc_000'
 import string
 
-
-
-
 def reverseString(strng):
     print "Challnege One\nPrint "+strng+" backwards"
     length =  len(strng)
@@ -63,4 +60,13 @@ def letterChanges(strng):
     print(newStrng)
 
 # letterChanges("hello ziggy marley you are such cool guy")
+
+def numberAdder(num):
+    print "Challnege Five\nAdd all numbers leading up to: "+str(num)+""
+    total = 0
+    for i in range(num):
+        total += i
+    print total
+
+numberAdder(10)
 
