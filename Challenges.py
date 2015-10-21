@@ -87,6 +87,7 @@ def firstLetterCapitalizer(strng):
 # firstLetterCapitalizer("a lowercase sentence is bad news bears")
 
 def simpleSymbols(strng):
+    print "Challnege Six\nAll letters in passed String: "+strng+" must be delmited by '+' or '=' signs"
     preAndPostCharacters = ["+","="]
     for i in range(len(strng)):
         if strng[i] in preAndPostCharacters:
@@ -98,3 +99,9 @@ def simpleSymbols(strng):
 
 simpleSymbols("+++=f+f+=r+b+")
 simpleSymbols("+++=ff+f+=r+b+")
+
+def numberComparator(num1,num2):
+    if num1 > num2:
+        return True
+    else:
+        return False
