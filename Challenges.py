@@ -97,11 +97,48 @@ def simpleSymbols(strng):
         else:
             assert True, "Yay!!"
 
-simpleSymbols("+++=f+f+=r+b+")
-simpleSymbols("+++=ff+f+=r+b+")
+# simpleSymbols("+++=f+f+=r+b+")
+# simpleSymbols("+++=ff+f+=r+b+")
 
 def numberComparator(num1,num2):
-    if num1 > num2:
+    print "Challnege Seven\nValidate that "+ str(num2) +" is greater than " + str(num1)
+    if num2 > num1:
         return True
+    elif num1 == num2:
+        return "-1"
     else:
         return False
+
+# numberComparator(5,7)
+
+def timeConversion(num):
+    print "Challnege Eight\nconvert " + str(num) + " into hours and minutes."
+    count = 0
+    if num >= 60:
+        counting = True
+        while counting is not False:
+            if num % 60 == 0:
+                num /= 60
+                counting = False
+            else:
+                num -= 1
+                count += 1
+        print str(num) + ":" + str(count)
+    else:
+        print "0:" + str(num)
+
+# timeConversion(145)
+
+def alphabeticalOrderOrganizer(strng):
+    alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    reorderedWord = []
+    for i in strng:
+        alphabeticalIndex = alphabet.index(i)
+        for j in strng:
+            if alphabeticalIndex > alphabet.index(j):
+                reorderedWord.append(i)
+    print(reorderedWord)
+
+
+
+alphabeticalOrderOrganizer("hello")
