@@ -130,15 +130,29 @@ def timeConversion(num):
 # timeConversion(145)
 
 def alphabeticalOrderOrganizer(strng):
-    alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-    reorderedWord = []
+    print "Challenge Nine\nArrange " + strng + " alphabetically"
+    originalWordArray = []
     for i in strng:
-        alphabeticalIndex = alphabet.index(i)
-        for j in strng:
-            if alphabeticalIndex > alphabet.index(j):
-                reorderedWord.append(i)
-    print(reorderedWord)
+        originalWordArray.append(i)
+    sortedArray = sorted(originalWordArray)
+    newWord = "".join(sortedArray)
+    print newWord
 
+# alphabeticalOrderOrganizer("werunthenight")
 
+def ABCheck(strng):
+    winner = False
+    for i in range(len(strng)):
+        if len(strng) > i + 3:
+            if strng[i] == "a" or strng[i] == "b":
+                if strng[i + 3] == "a" or strng[i + 3] == "b":
+                    winner = True
+                    break
+                else:
+                    winner = False
+    if winner == True:
+        print "True"
+    else:
+        print "False"
 
-alphabeticalOrderOrganizer("hello")
+# ABCheck("Laura sobs")
