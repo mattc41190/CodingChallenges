@@ -141,6 +141,7 @@ def alphabeticalOrderOrganizer(strng):
 # alphabeticalOrderOrganizer("werunthenight")
 
 def ABCheck(strng):
+    print "Challenge Nine\nValidate that selected letter A or B in " + strng + " is separated by 3 letters to another A or B"
     winner = False
     for i in range(len(strng)):
         if len(strng) > i + 3:
@@ -155,4 +156,4 @@ def ABCheck(strng):
     else:
         print "False"
 
-# ABCheck("Laura sobs")
+ABCheck("Laura sobs")
