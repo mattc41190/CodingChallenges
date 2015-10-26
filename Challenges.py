@@ -141,7 +141,7 @@ def alphabeticalOrderOrganizer(strng):
 # alphabeticalOrderOrganizer("werunthenight")
 
 def ABCheck(strng):
-    print "Challenge Nine\nValidate that selected letter A or B in " + strng + " is separated by 3 letters to another A or B"
+    print "Challenge Ten\nValidate that selected letter A or B in " + strng + " is separated by 3 letters to another A or B"
     winner = False
     for i in range(len(strng)):
         if len(strng) > i + 3:
@@ -156,4 +156,107 @@ def ABCheck(strng):
     else:
         print "False"
 
-ABCheck("Laura sobs")
+# ABCheck("Laura sobs")
+
+def VowleCheck(strng):
+    print "Challenge Eleven\nReturn count of all vowles in " + strng
+    vowels = ['a','e','i','o','u']
+    vowelCount = 0
+    for i in strng:
+        i = i.lower()
+        if i in vowels:
+            vowelCount += 1
+    print vowelCount
+
+# VowleCheck("All cows eat grass")
+
+
+def wordCounter(sentence):
+    print "Challenge Eleven\nReturn count of all words in: " + sentence
+    spaces = 0
+    for i in sentence:
+        if i == " ":
+            spaces += 1
+    print spaces
+
+# wordCounter("All cows eat grass")
+
+def ExOh(strng):
+    strng =  strng.lower()
+    print "Challenge Twelve\nCheck to see if there are an equal amount of Xs and Os in: " + strng
+    Xs = []
+    Os = []
+    for i in strng:
+        if i == "x":
+            Xs.append(i)
+        elif i == "o":
+            Os.append(i)
+    if len(Xs) == len(Os):
+        print "Equal"
+    else:
+        print "Not Equal"
+
+# ExOh("xxXOxooxoo")
+
+def Palindrome(strng):
+    print "Challenge Thirteen\nCheck to see if the following word is a palindrome: " + strng
+
+    strng =  strng.lower()
+    backward = ""
+    count = len(strng) - 1
+    for i in range(len(strng)):
+        backward += strng[count]
+        count -= 1
+    if backward ==  strng:
+        print "Yes " + strng + " is a palindrome"
+    else:
+        print "No " + strng + " is NOT a palindrome"
+
+# Palindrome("Mom")
+
+ArithArray = [2,4,6,8]
+def ArithGeo(arr):
+    print "Challenge Fourteen\nCheck to see if a collection follows math rules"
+    isArthimetic = True
+    isGeometric = True
+    arthimeticMeasure = arr[1] - arr[0]
+    geometricMeasure = arr[1] / arr[0]
+    for i in range(len(arr) -1):
+        if arr[i +1] - arr[i] == arthimeticMeasure:
+            isArthimetic = True
+            # print str(arr[i + 1]) + " is " + str(arthimeticMeasure) + " away from " + str(arr[i])
+        else:
+            isArthimetic = False
+            break
+    for i in range(len(arr) - 1):
+        if arr[i +1] / arr[i] == geometricMeasure:
+            isGeometric = True
+            # print str(arr[i + 1]) + " is " + str(geometricMeasure) + " away from " + str(arr[i])
+        else:
+            isGeometric = False
+            break
+    if isArthimetic == True:
+        print "Collection Is Arithmetic!"
+    elif isGeometric == True:
+        print "Collection Is Geometric"
+    elif isArthimetic == True and isGeometric == True:
+        print "Collection Is Geometric And Arithmetic"
+    else:
+        "Collection Is Neither Arithmetic Nor Geometric"
+# ArithGeo(ArithArray)
+
+arrayForAddition = [1,2,3]
+def arrayAdditionOne(arr):
+    largestNumber = 0
+    currentSum = 0
+    for i in arr:
+        if i > largestNumber:
+            largestNumber = i
+    for i in arr:
+        if i != largestNumber:
+            print "do stuff"
+    print largestNumber
+
+
+
+arrayAdditionOne(arrayForAddition)
