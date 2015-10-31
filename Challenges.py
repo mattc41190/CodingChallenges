@@ -224,14 +224,14 @@ def ArithGeo(arr):
     for i in range(len(arr) -1):
         if arr[i +1] - arr[i] == arthimeticMeasure:
             isArthimetic = True
-            # print str(arr[i + 1]) + " is " + str(arthimeticMeasure) + " away from " + str(arr[i])
+            print str(arr[i + 1]) + " is " + str(arthimeticMeasure) + " away from " + str(arr[i])
         else:
             isArthimetic = False
             break
     for i in range(len(arr) - 1):
         if arr[i +1] / arr[i] == geometricMeasure:
             isGeometric = True
-            # print str(arr[i + 1]) + " is " + str(geometricMeasure) + " away from " + str(arr[i])
+            print str(arr[i + 1]) + " is " + str(geometricMeasure) + " away from " + str(arr[i])
         else:
             isGeometric = False
             break
@@ -245,18 +245,33 @@ def ArithGeo(arr):
         "Collection Is Neither Arithmetic Nor Geometric"
 # ArithGeo(ArithArray)
 
-arrayForAddition = [1,2,3]
+arrayForAddition = [26,25,50]
 def arrayAdditionOne(arr):
-    largestNumber = 0
-    currentSum = 0
-    for i in arr:
-        if i > largestNumber:
-            largestNumber = i
-    for i in arr:
-        if i != largestNumber:
-            print "do stuff"
-    print largestNumber
+    largest = 0
 
+    for i in arr:
+        if i > largest:
+            largest = i
+    arr.remove(largest)
+    def oneAtATime(Narr):
+        sum = 0
+        for i in Narr:
+            sum += i
+            if sum > largest:
+                print("That is too big")
+                first = Narr[0]
+                Narr.append(first)
+                Narr.pop(0)
+                print(Narr)
+                oneAtATime(Narr)
+                return True
+            elif sum == largest:
+                print "Great " + str(sum)
+                return True
+            else:
+                print "too small " + str(sum)
+                continue
 
+    oneAtATime(arr)
 
 arrayAdditionOne(arrayForAddition)
